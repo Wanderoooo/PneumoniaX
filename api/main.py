@@ -9,7 +9,7 @@ import tensorflow as tf
 
 app = FastAPI()
 
-endpoint = "http://localhost:8501/v1/models/pneu_model:predict"
+endpoint = "http://localhost:8502/v1/models/pneu_model:predict"
 
 origins = [
     "http://localhost",
@@ -23,7 +23,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-MODEL = tf.keras.models.load_model("../saved_models/2")
+MODEL = tf.keras.models.load_model("../saved_models/1")
 
 CLASS_NAMES = ['COVID-19', 'Normal', 'Bacterial Pneumonia']
 
@@ -42,7 +42,7 @@ async def predict(
         "instances": img_batch.tolist()
     }
     
-    response = requests.post(endpoint, jason=json_data )
+    response = requests.post(endpoint, json=json_data )
     prediction =  np.array(response.json()["predictions"][0])
     
     # predictions = MODEL.predict(img_batch)
