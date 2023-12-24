@@ -10,14 +10,14 @@ The model is trained on a curated dataset of X-ray images that include samples o
 ## Model Architecture
 The CNN model consists of several convolutional layers, followed by max-pooling layers to reduce spatial dimensions. The architecture is as follows:
 
-Convolutional Layer (32 filters, 3x3 kernel, ReLU activation)
-MaxPooling Layer (2x2 pool size)
-Convolutional Layer (64 filters, 3x3 kernel, ReLU activation)
-MaxPooling Layer (2x2 pool size)
-Additional Convolutional and MaxPooling layers for further feature extraction
-Flatten Layer to convert 2D feature maps to a 1D vector
-Fully Connected Layer (Dense) with 64 neurons and ReLU activation
-Output Layer with n_classes neurons and softmax activation for multi-class classification.
+- Convolutional Layer (32 filters, 3x3 kernel, ReLU activation)
+- MaxPooling Layer (2x2 pool size)
+- Convolutional Layer (64 filters, 3x3 kernel, ReLU activation)
+- MaxPooling Layer (2x2 pool size)
+- Additional Convolutional and MaxPooling layers for further feature extraction
+- Flatten Layer to convert 2D feature maps to a 1D vector
+- Fully Connected Layer (Dense) with 64 neurons and ReLU activation
+- Output Layer with n_classes neurons and softmax activation for multi-class classification.
 
 ## Model Compilation
 The model is compiled using the Adam optimizer and Sparse Categorical Crossentropy as the loss function. Accuracy is used as the metric for evaluation.
