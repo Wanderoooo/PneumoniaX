@@ -23,7 +23,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-MODEL = tf.keras.models.load_model("../saved_models/1")
+# MODEL = tf.keras.models.load_model("../saved_models/1")
 
 CLASS_NAMES = ['COVID-19', 'Normal', 'Bacterial Pneumonia']
 
